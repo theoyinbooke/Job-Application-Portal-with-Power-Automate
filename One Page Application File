@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sankofa Bazaar Job Application Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --sankofa-brown: #4A2F1D;
+            --sankofa-light: #FDF8F5;
+        }
+        
+        body {
+            background-color: var(--sankofa-light);
+            color: var(--sankofa-brown);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(74, 47, 29, 0.1);
+            padding: 30px 40px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            max-width: 200px;
+            margin: 0 auto 20px;
+            display: block;
+        }
+
+        h1 {
+            color: var(--sankofa-brown);
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            color: var(--sankofa-brown);
+            margin-bottom: 5px;
+            font-weight: normal;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="file"].form-control {
+            padding: 3px;
+            height: auto;
+        }
+
+        input[type="file"].form-control::-webkit-file-upload-button {
+            padding: 5px 10px;
+            margin-right: 10px;
+            border: none;
+            background: var(--sankofa-brown);
+            color: white;
+            border-radius: 4px;
+        }
+
+        input[type="file"].form-control::file-selector-button {
+            padding: 5px 10px;
+            margin-right: 10px;
+            border: none;
+            background: var(--sankofa-brown);
+            color: white;
+            border-radius: 4px;
+        }
+
+        .form-control:focus {
+            border-color: var(--sankofa-brown);
+            box-shadow: 0 0 0 0.2rem rgba(74, 47, 29, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            background-color: var(--sankofa-brown);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            width: 200px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: #3A2518;
+        }
+
+        .file-help-text {
+            color: var(--sankofa-brown);
+            font-size: 0.875em;
+            margin-top: 5px;
+        }
+
+        #alert-container {
+            margin-bottom: 20px;
+        }
+
+        .alert {
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .modal-content {
+            border-radius: 15px;
+            border: none;
+        }
+
+        .modal-header {
+            background-color: var(--sankofa-brown);
+            color: white;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            border-bottom: none;
+        }
+
+        .modal-title {
+            color: white;
+        }
+
+        .modal-body {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .modal-footer {
+            border-top: none;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        .btn-youtube {
+            background-color: #FF0000;
+            color: white;
+            padding: 10px 30px;
+            border-radius: 6px;
+            border: none;
+            text-decoration: none;
+        }
+
+        .btn-youtube:hover {
+            background-color: #CC0000;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="alert-container"></div>
+        <img src="@{outputs('My_Logo')}" alt="Sankofa Bazaar Logo" class="logo">
+        <h1>Job Application Form</h1>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" class="form-control" id="fullname" name="fullname" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="linkedin">LinkedIn Profile URL</label>
+                <input type="url" class="form-control" id="linkedin" name="linkedin" placeholder="https://www.linkedin.com/in/your-profile" required>
+            </div>
+
+            <div class="form-group">
+                <label for="position">Position</label>
+                <select class="form-control" id="position" name="position" required>
+                    <option value="">Select Position</option>
+                    <option value="Cloud Administrator">Cloud Administrator</option>
+                    <option value="Data Analyst">Data Analyst</option>
+                    <option value="Developer Advocate">Developer Advocate</option>
+                    <option value="DevOps Engineer">DevOps Engineer</option>
+                    <option value="Graduate Entry Program">Graduate Entry Program</option>
+                    <option value="Internship">Internship</option>
+                    <option value="Machine Learning Engineer">Machine Learning Engineer</option>
+                    <option value="Product Manager">Product Manager</option>
+                    <option value="Product Marketing Manager">Product Marketing Manager</option>
+                    <option value="Program Manager">Program Manager</option>
+                    <option value="Sales Manager">Sales Manager</option>
+                    <option value="Software Developer">Software Developer</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" class="form-control" id="dob" name="dob" max="" required>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select class="form-control" id="gender" name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Prefer not to say</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="comments">Additional Comments</label>
+                <textarea class="form-control" id="comments" name="comments" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="resume">Resume</label>
+                <input type="file" class="form-control" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+                <div class="file-help-text">Upload your resume (PDF, DOC, or DOCX format)</div>
+            </div>
+
+            <div class="form-group">
+                <label for="coverLetter">Cover Letter</label>
+                <input type="file" class="form-control" id="coverLetter" name="coverLetter" accept=".pdf,.doc,.docx" required>
+                <div class="file-help-text">Upload your cover letter (PDF, DOC, or DOCX format)</div>
+            </div>
+
+            <button type="submit" class="btn-submit">Submit Application</button>
+        </form>
+    </div>
+
+    <!-- Response Modal -->
+    <div class="modal fade" id="responseModal" tabindex="-1" role="dialog" aria-labelledby="responseModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="responseModalLabel">Application Status</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="color: white;">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="responseModalBody">
+                    <!-- Content will be dynamically inserted here -->
+                </div>
+                <div class="modal-footer" id="responseModalFooter">
+                    <!-- Buttons will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('dob').setAttribute('max', today);
+        });
+
+        document.getElementById("contactForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const form = event.target;
+            const resumeFile = document.getElementById('resume').files[0];
+            const coverLetterFile = document.getElementById('coverLetter').files[0];
+            const documents = [];
+
+            try {
+                if (resumeFile) {
+                    const resumeBase64 = await fileToBase64(resumeFile);
+                    documents.push({
+                        filename: resumeFile.name,
+                        content: resumeBase64,
+                        type: 'resume'
+                    });
+                }
+
+                if (coverLetterFile) {
+                    const coverLetterBase64 = await fileToBase64(coverLetterFile);
+                    documents.push({
+                        filename: coverLetterFile.name,
+                        content: coverLetterBase64,
+                        type: 'coverLetter'
+                    });
+                }
+
+                const formData = {
+                    fullname: form.fullname.value,
+                    email: form.email.value,
+                    phone: form.phone.value,
+                    linkedin: form.linkedin.value,
+                    position: form.position.value,
+                    dob: form.dob.value,
+                    gender: form.gender.value,
+                    comments: form.comments.value,
+                    documents: documents
+                };
+
+                const response = await fetch("@{variables('CollectorURL')}", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    showModal(
+                        true,
+                        "Application Submitted Successfully",
+                        "Thank you for your application! We will review it and get back to you soon.",
+                        true
+                    );
+                } else {
+                    showModal(
+                        false,
+                        "Submission Failed",
+                        "Failed to submit the application. Please try again.",
+                        false
+                    );
+                }
+            } catch (error) {
+                showModal(
+                    false,
+                    "Submission Failed",
+                    "Failed to submit the application. Please try again.",
+                    false
+                );
+            }
+        });
+
+        function showAlert(message, type) {
+            const alertContainer = document.getElementById("alert-container");
+            alertContainer.innerHTML = `
+                <div class="alert alert-${type}" role="alert">
+                    ${message}
+                </div>
+            `;
+        }
+
+        function showModal(isSuccess, title, message, showYouTubeButton) {
+            const modalHeader = document.querySelector('.modal-header');
+            modalHeader.style.backgroundColor = isSuccess ? 'var(--sankofa-brown)' : '#dc3545';
+            
+            document.getElementById('responseModalLabel').textContent = title;
+            
+            const modalBody = document.getElementById('responseModalBody');
+            modalBody.innerHTML = `
+                <h4 style="color: ${isSuccess ? 'var(--sankofa-brown)' : '#dc3545'};">
+                    ${isSuccess ? 'Thank you!' : 'Oops!'}
+                </h4>
+                <p>${message}</p>
+            `;
+            
+            const modalFooter = document.getElementById('responseModalFooter');
+            if (showYouTubeButton) {
+                modalFooter.innerHTML = `
+                    <a href="https://youtube.com/c/theoyinbooke" target="_blank" class="btn btn-youtube">
+                        Visit Our YouTube Channel
+                    </a>
+                `;
+            } else {
+                modalFooter.innerHTML = `
+                    <button type="button" class="btn btn-new-application" data-dismiss="modal">
+                        Try Again
+                    </button>
+                `;
+            }
+            
+            $('#responseModal').modal('show');
+        }
+
+        function fileToBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result.split(',')[1]);
+                reader.onerror = error => reject(error);
+                reader.readAsDataURL(file);
+            });
+        }
+    </script>
+</body>
+</html>
