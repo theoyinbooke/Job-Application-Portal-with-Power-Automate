@@ -234,14 +234,14 @@
 
             <div class="form-group">
                 <label for="resume">Resume</label>
-                <input type="file" class="form-control" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
-                <div class="file-help-text">Upload your resume (PDF, DOC, or DOCX format)</div>
+                <input type="file" class="form-control" id="resume" name="resume" accept=".pdf" required>
+                <div class="file-help-text">Upload your resume (PDF format only)</div>
             </div>
 
             <div class="form-group">
                 <label for="coverLetter">Cover Letter</label>
-                <input type="file" class="form-control" id="coverLetter" name="coverLetter" accept=".pdf,.doc,.docx" required>
-                <div class="file-help-text">Upload your cover letter (PDF, DOC, or DOCX format)</div>
+                <input type="file" class="form-control" id="coverLetter" name="coverLetter" accept=".pdf" required>
+                <div class="file-help-text">Upload your cover letter (PDF format only)</div>
             </div>
 
             <button type="submit" class="btn-submit">Submit Application</button>
@@ -317,7 +317,7 @@
                     documents: documents
                 };
 
-                const response = await fetch("@{variables('CollectorURL')}", {
+                const response = await fetch("@{variables('POSTURL')}", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -376,9 +376,9 @@
             const modalFooter = document.getElementById('responseModalFooter');
             if (showYouTubeButton) {
                 modalFooter.innerHTML = `
-                    <a href="https://youtube.com/c/theoyinbooke" target="_blank" class="btn btn-youtube">
+                    <button onclick="handleYouTubeClick()" class="btn btn-youtube">
                         Visit Our YouTube Channel
-                    </a>
+                    </button>
                 `;
             } else {
                 modalFooter.innerHTML = `
@@ -389,6 +389,17 @@
             }
             
             $('#responseModal').modal('show');
+        }
+
+        function handleYouTubeClick() {
+            // Clear the form
+            document.getElementById('contactForm').reset();
+            
+            // Close the modal
+            $('#responseModal').modal('hide');
+            
+            // Load YouTube channel in the same window
+            window.location.href = 'https://youtube.com/c/theoyinbooke';
         }
 
         function fileToBase64(file) {
