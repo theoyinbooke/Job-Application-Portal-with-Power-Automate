@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Application Confirmation</title>
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+    <style type="text/css">
+        /* Outlook-specific styles */
+        body, table, td, p, a, li, blockquote {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+            font-family: Arial, Helvetica, sans-serif !important;
+        }
+        /* Prevent WebKit and Windows mobile from changing text sizes */
+        body {
+            width: 100% !important;
+            height: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        /* Prevent iOS links from having an underline */
+        .apple-link a {
+            color: inherit !important;
+            text-decoration: none !important;
+        }
+        /* Mobile-specific styles */
+        @media screen and (max-width: 600px) {
+            .email-container {
+                width: 100% !important;
+            }
+            .fluid {
+                max-width: 100% !important;
+                height: auto !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f9f3f0; width: 100%;">
+    <center style="width: 100%; background-color: #f9f3f0; text-align: left;">
+        <div style="max-width: 600px; margin: 0 auto;" class="email-container">
+            <!--[if mso]>
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+            <tr>
+            <td>
+            <![endif]-->
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <!-- Header -->
+                <tr>
+                    <td style="padding: 40px 30px; text-align: center;">
+                        <img src="[YOUR-BASE64-IMAGE-STRING]" alt="Sankofa Bazaar" width="200" style="width: 200px; height: auto; display: block; margin: 0 auto; border: 0;" class="fluid" />
+                    </td>
+                </tr>
+                <!-- Content -->
+                <tr>
+                    <td style="padding: 30px; color: #4a4a4a;">
+                        <h1 style="color: #553622; margin: 0 0 20px; font-size: 24px; font-family: Arial, sans-serif; line-height: 1.3;">Application Successfully Submitted!</h1>
+                        <p style="margin: 0 0 20px; line-height: 1.5; font-family: Arial, sans-serif;">Dear [Name],</p>
+                        <p style="margin: 0 0 20px; line-height: 1.5; font-family: Arial, sans-serif;">Thank you for applying to join our community at Sankofa Bazaar. We've received your application and our team will review it shortly.</p>
+                        <p style="margin: 0 0 30px; line-height: 1.5; font-family: Arial, sans-serif;">While you wait, why not explore our educational content to learn more about what we do?</p>
+                        <!-- Button -->
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: 0 auto;">
+                            <tr>
+                                <td style="border-radius: 4px; background-color: #553622;">
+                                    <a href="https://youtube.com/in/olanrewaju-oyinbooke" target="_blank" style="background: #553622; border-radius: 4px; color: #ffffff; display: inline-block; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 1.2; padding: 12px 25px; text-decoration: none; text-align: center; -webkit-text-size-adjust: none;">Explore More Tutorials</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- Footer -->
+                <tr>
+                    <td style="padding: 30px; text-align: center; color: #666666; font-size: 14px; font-family: Arial, sans-serif; background-color: #f8f8f8; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
+                        <p style="margin: 0;">© 2025 Sankofa Bazaar. All rights reserved.</p>
+                    </td>
+                </tr>
+            </table>
+            <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </div>
+    </center>
+</body>
+</html>
