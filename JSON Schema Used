@@ -1,0 +1,88 @@
+{
+    "type": "object",
+    "properties": {
+        "fullname": {
+            "type": "string",
+            "description": "Full name of the applicant"
+        },
+        "email": {
+            "type": "string",
+            "format": "email",
+            "description": "Email address of the applicant"
+        },
+        "phone": {
+            "type": "string",
+            "description": "Phone number of the applicant"
+        },
+        "linkedin": {
+            "type": "string",
+            "format": "uri",
+            "description": "LinkedIn profile URL of the applicant"
+        },
+        "position": {
+            "type": "string",
+            "enum": [
+                "Cloud Administrator",
+                "Data Analyst",
+                "Developer Advocate",
+                "DevOps Engineer",
+                "Graduate Entry Program",
+                "Internship",
+                "Machine Learning Engineer",
+                "Product Manager",
+                "Product Marketing Manager",
+                "Program Manager",
+                "Sales Manager",
+                "Software Developer"
+            ],
+            "description": "Position being applied for"
+        },
+        "dob": {
+            "type": "string",
+            "format": "date",
+            "description": "Date of birth of the applicant"
+        },
+        "gender": {
+            "type": "string",
+            "enum": [
+                "Male",
+                "Female",
+                "Other"
+            ],
+            "description": "Gender of the applicant"
+        },
+        "comments": {
+            "type": "string",
+            "description": "Additional comments from the applicant"
+        },
+        "documents": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "filename": {
+                        "type": "string",
+                        "description": "Name of the uploaded file"
+                    },
+                    "content": {
+                        "type": "string",
+                        "description": "Base64 encoded file content"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "resume",
+                            "coverLetter"
+                        ],
+                        "description": "Type of document uploaded"
+                    }
+                },
+                "required": [
+                    "filename",
+                    "content",
+                    "type"
+                ]
+            }
+        }
+    }
+}
